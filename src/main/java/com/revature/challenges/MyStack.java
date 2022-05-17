@@ -17,8 +17,12 @@ public class MyStack {
     return elements.push(item);
   }
 
-  public Integer pop(Integer item) {
-    return elements.pop();
+  public Integer pop(Integer num) {
+    elements.remove(num);
+    if(num == getMin()){
+      findMin();
+    }
+    return num;
   }
 
   public void setMin(Integer item){
@@ -31,5 +35,15 @@ public class MyStack {
 
   public Integer getMin() {
     return minItem;
+  }
+
+  public void findMin(){
+    int newMin = Integer.MAX_VALUE;
+    for(int i = 0; i < elements.size(); i++){
+      if(elements.get(i) < newMin){
+        newMin = elements.get(i);
+      }
+    }
+    setMin(newMin);
   }
 }

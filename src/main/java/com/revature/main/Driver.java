@@ -46,5 +46,10 @@ public class Driver{
     myStack.push(13);
 
     System.out.println("The min should be -13 and myStack reveals the min as  "+myStack.getMin());
+
+    myStack.pop(-13);
+
+    System.out.println("The min should be 1 and myStack reveals the min as  "+myStack.getMin());
+
   }
 }
